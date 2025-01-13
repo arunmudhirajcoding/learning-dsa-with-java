@@ -6,7 +6,6 @@ public class Basics {
         // but in java 2d arrays are stored like:
         // 
 
-
         //creation of 2d array
         int matrix[][] = new int[2][2];
         // accessing the length of matrix
