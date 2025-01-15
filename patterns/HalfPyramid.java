@@ -13,9 +13,12 @@ public class HalfPyramid {
         Scanner Sc = new Scanner(System.in);
         int num = Sc.nextInt();
         // System.out.println();
-        // for (int row = 1; row <=num; row++) {
-        //     for(int col =1 ; col<=row ; col++){
-        //         System.out.print(col);
+        // for (int row = 0; row <=num-1; row++) {
+        //     for (int i = 0; i <row; i++) {
+        //         System.out.print(" ");
+        //     }
+        //     for(int col =num ; col>row ; col--){
+        //         System.out.print("*");
         //     }
         //     System.out.println();
         // }
