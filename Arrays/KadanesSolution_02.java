@@ -8,17 +8,19 @@ public class KadanesSolution_02 {
         int maxsum = Integer.MIN_VALUE;
         int currSum=0;
         int count=0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i]<0) {
-                count++;
-            }
-        }
-        if (count==arr.length) {
-            for (int i = 0; i < arr.length; i++){
-                maxsum=Math.max(maxsum, arr[i]);
-            }
-        }
-        // System.out.println();
+                // checks wheather the all elements are negative
+                for (int i = 0; i < arr.length; i++) {
+                    if (arr[i]<0) {
+                        count++;
+                    }
+                }
+                //if all elements are negative provides max in element
+                if (count==arr.length) {
+                    for (int i = 0; i < arr.length; i++){
+                        maxsum=Math.max(maxsum, arr[i]);
+                    }
+                }
+                //if all not negative then use kadanes algo
         else{
             for (int i = 0; i < arr.length; i++) 
         {
