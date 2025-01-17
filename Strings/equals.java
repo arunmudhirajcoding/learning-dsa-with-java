@@ -4,7 +4,7 @@ public class equals {
         String s1 = new String("arun");
         String s2 = "arun";
         String s3 = "arun";
-        if (s1 == s2) { //  equal content but comparing one is object one is literal
+        if (s1 == s2) { //  equal content but comparing one is object one is literal (is called **interning** )
             System.out.println("Strings are equal ");
         } else {
             System.out.println("strings are not equal");
