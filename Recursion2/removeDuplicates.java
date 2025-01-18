@@ -4,7 +4,7 @@ public class removeDuplicates {
     // logic: ch-a gives idx of alphabet 
     //eg: ch= a a-a=0, b: b-a = 1, c:c-a=2
     //          32-32=0   33-32=1
-    
+
     static void rmDupi(String str,StringBuilder newstr, boolean map[],int idx){
         //end case
         if (str.length()==idx) {
@@ -25,6 +25,7 @@ public class removeDuplicates {
     }
     public static void main(String[] args) {
         String str = "arunkumar";
+        // removing duplicates and print eg: arunkm duplicats are uar
         rmDupi(str,new StringBuilder(""),new boolean[26],0);        
     }
 }
