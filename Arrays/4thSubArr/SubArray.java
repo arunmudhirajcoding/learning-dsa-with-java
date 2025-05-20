@@ -25,7 +25,7 @@ public class SubArray {
     public static void subArray(int arr[],int n){
         System.out.println("Sub Arrays are:");
         int NoOfSubArray=0;
-        // System.out.println();
+
         //we need subarrays upto last index
         for (int i = 0; i < n; i++) {
             
@@ -75,10 +75,13 @@ public class SubArray {
     public static void main(String[] args) {
         int arr[] = new int[20];
         Scanner Sc = new Scanner(System.in);
+
         System.out.println("Enter size of array: ");
         int n = Sc.nextInt();
+
         readArray(arr,n);
         printArray(arr,n);
+
         subArray(arr, n);
     }
 }

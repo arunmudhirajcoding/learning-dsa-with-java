@@ -1,25 +1,28 @@
 import java.util.Scanner;
 
 //space complexity is O(1) we don't made a array
-//but ifa we make another array store origial array the space complexity is O(n)
+//but if we make an another array brr to store origial array in reverse  the space complexity is O(n)
 
-//time complexity is O(n)
+//time complexity is actually O(n/2) but due to constant -> O(n) //for loop of swaping
 
 
 
 public class reverseArray {
     public static void revArray(int arr[],int n){
-        int temp,i=0,j=n-1;
+        int temp,start=0,end=n-1;
         System.out.println("elements after reversing:");
-        while (i!=j) {
-            temp = arr[j];
-            arr[j]=arr[i];
-            arr[i]=temp;
-            j--;
-            i++;
-            // System.out.println();
+        while (start!=end) {
+
+            //swaping start and end elements
+            temp = arr[end];
+            arr[end]=arr[start];
+            arr[start]=temp;
+
+            //pointers
+            start++;//start pointer
+            end--;//end pointer
         }
-        for (int j2 = 0; j2 < n; j2++) {
+        for (int j2 = 0; j2 < n; j2++) { // reversed array
             System.out.println(arr[j2]+" at index-> "+j2);
         }
     }
@@ -39,13 +42,17 @@ public class reverseArray {
         }
         // System.out.println();
     }
+
     public static void main(String[] args) {
         int arr[] = new int[20];
         Scanner Sc = new Scanner(System.in);
+
         System.out.println("Enter size of array: ");
         int n = Sc.nextInt();
-        readArray(arr,n);
-        printArray(arr,n);
-       revArray(arr, n);
+
+        readArray(arr,n);//input array
+        printArray(arr,n);//print array
+
+        revArray(arr, n);//print reverse array
     }    
 }

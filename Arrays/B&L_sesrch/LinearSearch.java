@@ -1,7 +1,7 @@
 import java.util.*;
 public class LinearSearch {
         // time complexity is O(n)
-    public static int Lsearch(int arr[],int key,int n){
+    public static int Lsearch(int arr[],int key,int n){//linear search code
         for (int i = 0; i < n; i++) {
             if (arr[i]== key) {
                 System.out.println(key+" found at "+i);
@@ -27,16 +27,22 @@ public class LinearSearch {
         }
         // System.out.println();
     }
+
     public static void main(String[] args) {
         int arr[] = new int[20];
         Scanner Sc = new Scanner(System.in);
+
         System.out.println("Enter size of array: ");
         int n = Sc.nextInt();
-        readArray(arr,n);
-        printArray(arr,n);
+
+        readArray(arr,n);//scanning array
+        printArray(arr,n);//reading array
+
         System.out.println("Enter a number to search in array: ");
-        int num = Sc.nextInt();
-        if (Lsearch(arr, num,n)==-1) {
+        int num = Sc.nextInt();//key to search
+
+
+        if (Lsearch(arr, num,n)==-1) {//func returns -1 if element not found
             System.out.println("element not found");
             
         }

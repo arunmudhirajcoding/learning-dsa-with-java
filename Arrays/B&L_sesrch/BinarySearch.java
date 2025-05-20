@@ -16,7 +16,7 @@ public class BinarySearch {
 
 
      */
-    public static int Bsearch(int arr[],int key,int n){
+    public static int Bsearch(int arr[],int key,int n){//binary search code
         int start = 0,end =n-1;
         while (start<=end) {
             // System.out.println();
@@ -50,16 +50,21 @@ public class BinarySearch {
         }
         // System.out.println();
     }
+    
     public static void main(String[] args) {
         int arr[] = new int[20];
         Scanner Sc = new Scanner(System.in);
+
         System.out.println("Enter size of array: ");
         int n = Sc.nextInt();
-        readArray(arr,n);
-        printArray(arr,n);
+
+        readArray(arr,n);//scanning array
+        printArray(arr,n);//printing array
+
         System.out.println("Enter a number to search in array: ");
-        int num = Sc.nextInt();
-        if(Bsearch(arr, num,n)==-1){
+        int num = Sc.nextInt();//key to search 
+
+        if(Bsearch(arr, num,n)==-1){//func returns -1 if element not found
             System.out.println("element not found");
         }
     }
