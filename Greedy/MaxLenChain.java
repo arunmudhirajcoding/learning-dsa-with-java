@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class MaxLenChain {
+
+    //make a long chain as possible with given pairs 
+    //idea: same like activity selection
     public static void main(String[] args) {//tc = O(nlogn)
         int pairs[][] = {{5, 24}, {39, 60}, {5, 28}, {27, 40}, {50, 90} };
 
