@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SingleWayNQ {
 
     public static boolean ifSafe(char board[][], int row, int col) {
@@ -51,12 +53,15 @@ public class SingleWayNQ {
     public static void main(String[] args) {
         int size = 4;
         char board[][] = new char[size][size];
+        // place x in all places of board
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) {
-                board[i][j] = 'x';
-            }
-        }
+            // for (int j = 0; j < board.length; j++) {
+            //     board[i][j] = 'x';
+            // }
+            Arrays.fill(board[i], 'x');
 
+        }
+        // check 
         if (queens(board, 0)) {
             System.out.println("the possible way is");
             printBoard(board);
