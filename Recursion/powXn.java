@@ -10,7 +10,9 @@ public class powXn {
         if (n==0) {
             return 1;
         }
-        int ans = op_pow(x, n/2)*op_pow(x, n/2);
+        // int ans = op_pow(x, n/2)*op_pow(x, n/2); //O(n)
+        int half =op_pow(x, n/2); // tc = O(logn)
+        int ans =half*half;
         if (n%2!=0) {
             return x*ans;
         }
