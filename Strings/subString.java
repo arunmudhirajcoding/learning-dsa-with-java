@@ -5,7 +5,8 @@ public class subString {
         String substr = "";
         //tc = O(n)
         for (int i = si; i < ei; i++) {
-            substr+=str.charAt(i);
+            substr+=str.charAt(i); // java strings are immutable so here every append of char, we get new substr with new char . 
+            //this looping with string litertal is not preferable, so use stringBuilder or inbuilt substring method
         }
         return substr;
     }

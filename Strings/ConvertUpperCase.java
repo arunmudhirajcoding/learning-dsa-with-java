@@ -15,8 +15,7 @@ public class ConvertUpperCase {
         for (int i = 1; i < str.length(); i++) {
             if (str.charAt(i)==' ' && i<str.length()-1) {//&& for should less than end char of string
                 sb.append(str.charAt(i));
-                i++;
-                ch = str.charAt(i);
+                ch = str.charAt(++i);
                 sb.append(Character.toUpperCase(ch));
             } else {
                 sb.append(str.charAt(i));
