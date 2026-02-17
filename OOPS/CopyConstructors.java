@@ -33,6 +33,7 @@ class Student{
     // }
     Student(Student s){
         marks = new int[3];
+        //or by using loop on marks we can implement deep copy
         this.marks[0]= s.marks[0];//deep copy means new object is created, changes wont apears 
     }
     Student(){

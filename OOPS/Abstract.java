@@ -2,12 +2,19 @@
 public class Abstract {
     public static void main(String[] args) {
         // Animals animals = new Animals(); // can't create object as it is abstract class
-
+        Horse h1 = new Horse();
+        System.out.println("this is default color made by abstract class: "+h1.color);
+        h1.changeColor();
+        System.out.println("this is color made after calling in child class of abstract class:  "+h1.color);
         
     }
 }
 
 abstract class Animals{
+    String color;
+    Animals(){// abstract classes can have constructor.constructor called when instance creation but abstract classes doesn't have constructor
+        color="brown"; // it will be act as default value
+    }
     void eat(){ //non-abstract method
         System.out.println("animmals eats .. ");
 
@@ -24,6 +31,9 @@ abstract class Animals{
 // }
 
 class Horse extends Animals{
+    void changeColor(){
+        color="black";
+    }
     void walks(){// abstract method of parent must defined in child class
         System.out.println("Animal and Horse walks..");
     }

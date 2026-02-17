@@ -15,7 +15,8 @@ public class inheritance {
     }
 }
 
-class Animals{
+
+class Animals{// parent
     void eats(){
         System.out.println("eating..");
     }
@@ -23,27 +24,58 @@ class Animals{
         System.out.println("Breathing..");
     }
 }
-class Fish extends Animals{
+class Fish extends Animals{ // child with single inheritence
     int fins = 4;
     String grills = "both sides";
     
 }
-class Tuna extends Fish{
-    String light = "light on head";
-} 
-class Shark extends Fish{
-    int horn = 1;
-} 
+
 class Bird extends Animals{
     int wings = 2;
-}
-class Peacock extends Bird{
-    String dance = "it can dance..";
 }
 
 class Mammals extends Animals{
     String birth = "Give birth directly";
 }
+
+class Reptiles extends Animals{
+    void getName(){
+        System.out.println("reptiles....");
+    }
+    void eats(){
+        System.out.println("eating..");
+    } 
+}
+
+/* 
+ * Inheritance Visualization
+ * 
+ *                  Animals
+ *         ------------------------------
+ *         /     \            /         \
+ *      Fish      Bird        Reptiles  Mammals
+ *                          /        \
+                        getName()    eat()
+ *     
+ *   
+ *   
+ */
+
+
+
+class Tuna extends Fish{ 
+    String light = "light on head";
+} 
+class Shark extends Fish{// fish inherts animal and shark inherts fish. so multilevel inheritence 
+    int horn = 1;
+} 
+
+
+class Peacock extends Bird{
+    String dance = "it can dance..";
+}
+
+
 class Dog extends Mammals{
     String barks = "Dogs braks";
 }
@@ -55,11 +87,11 @@ class Human extends Mammals{
     String walk = "can walk with 2 legs";
 }
 
-class Reptiles extends Animals{
-    void getName(){
-        System.out.println("reptiles....");
-    }
-    void eats(){
-        System.out.println("eating..");
-    } 
-}
+//             Animals
+//             /     \         
+//          Fish      Bird     hybrid
+//          /  \
+//        Tuna shark 
+
+
+
