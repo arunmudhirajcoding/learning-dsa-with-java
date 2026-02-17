@@ -1,50 +1,108 @@
+// public class RotateTarget {
+//     public static int Search(int[] nums, int target) {
+//         int largest = largeSearch(nums);
+//         System.out.println(target <= nums[nums.length - 1]);
+//         if (target <= nums[nums.length - 1]) {// RIGHT
+
+//             return Search(nums, target, largest + 1, nums.length-1);
+//         } else {
+//             return Search(nums, target, 0, largest);
+//         }
+//     }
+
+//     public static int largeSearch(int nums[]) {
+//         int left = 0, right = nums.length-1;
+//         while (left < right) {
+//             int mid = left + (right - left) / 2;
+            
+
+//             if (nums[mid - 1] < nums[mid] && nums[mid] > nums[mid + 1]) {
+//                 return mid;
+//             } else if (nums[left] > nums[mid]) {
+//                 right = mid - 1;
+//             } else {
+//                 left = mid + 1;
+//             }
+//         }
+//         return 0;
+//     }
+
+//     public static int Search(int[] nums, int target, int left, int right) {
+//         while (left <=right) {
+//             int mid = left + (right - left) / 2;
+//             if (target == nums[mid]) {
+//                 return mid;
+//             } else if (nums[mid] < target) {
+//                 left = mid + 1;
+//             } else {
+//                 right = mid - 1;
+//             }
+//         }
+//         return -1;
+//     }
+
+//     public static void main(String[] args) {
+//         int nums[] = { 4, 5, 6, 7, 0, 1, 2 };
+//         int in = Search(nums, 7);
+//         if (in == -1) {
+//             System.out.println("Element not Found indexNotFound " + in);
+//         } else {
+//             System.out.println("Element  Found at " + in);
+
+//         }
+//     }
+// }
+
+
 public class RotateTarget {
-    public static int Search(int nums[], int target){
+    public static int Search(int nums[], int target) {
         int min = minSearch(nums);
-        if (target>=nums[min]&&nums[min]>=nums.length-1) {
+        if (target >= nums[min] && target <= nums[nums.length - 1]) {// right
             return Search(nums, target, min, nums.length);
-        } else {
-            return Search(nums, target,0,min);
+        } else {// left
+            return Search(nums, target, 0, min);
         }
     }
-    
-    public static int minSearch(int nums[]){
+
+    public static int minSearch(int nums[]) {
         int l = 0;
-        int r = nums.length-1;
-        while (l<r) {
-            int mid = l+(r-l)/2;
-            if (mid>0 && nums[mid-1]>nums[mid]) {
+        int r = nums.length - 1;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            if (mid > 0 && nums[mid - 1] > nums[mid]) {
                 return mid;
-            } else if (nums[l]<=nums[mid]&&nums[mid]>nums[r]) {
-                l = mid+1;
-            } else{
-                r = mid-1;
+            } else if (nums[l] <= nums[mid] && nums[mid] > nums[r]) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
             }
         }
         return l;
     }
-    public static int Search(int nums[],int n, int start,int end){
-        while (start<=end) {
-            int mid = start + (end-start)/2;
-            if (n==nums[mid]) {
+
+    public static int Search(int nums[], int n, int start, int end) {
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (n == nums[mid]) {
                 return mid;
-            } else if (nums[mid]<n) {
-                start = mid+1;
-            }else {
-                end = mid -1;
+            } else if (nums[mid] < n) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
             }
             // System.out.println("hi");
         }
         return -1;
     }
+
     public static void main(String[] args) {
-        int nums[] = {4, 5, 6, 7, 0, 1 ,2};
-        int in = Search(nums, 9);
-        if (in ==-1) {
-            System.out.println("Element not Found indexNotFound "+ in);
+        int nums[] = { 4, 5, 6, 7, 0, 1, 2 };
+        int in = Search(nums, 0);
+        if (in == -1) {
+            System.out.println("Element not Found indexNotFound " + in);
         } else {
-            System.out.println("Element  Found at "+ in);
-            
+            System.out.println("Element  Found at " + in);
+
         }
     }
 }
