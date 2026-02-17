@@ -10,6 +10,7 @@ public class LLCollections {
         //add
         ll.addLast(1);
         ll.addFirst(2);
+        ll.addFirst(2);
         System.out.println(ll);
 
         //remove

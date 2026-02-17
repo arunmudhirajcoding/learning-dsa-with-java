@@ -152,6 +152,7 @@ public class LinkedList {
         return -1;
     }
 
+    //helper for rec
     public int helper(Node head, int key) {
         if (head == null) {
             return -1;
@@ -218,6 +219,7 @@ public class LinkedList {
         return slow;//mid Node
     }
 
+    //palindrome approach also can do by converting linkedlist to array or string by inserting values iterativly
     public boolean palindrome(){
         //case1: single node or no node
         if (head==null || head.next==null) {
@@ -259,7 +261,7 @@ public class LinkedList {
         // ll.addLast(4);
         // ll.add(5, 0);
         // ll.traversel();
-        // ll.reverse();
+        ll.reverse();
         // ll.traversel();
         // ll.deleteNthFromEnd(3);
         // ll.traversel();
