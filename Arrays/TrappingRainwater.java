@@ -14,10 +14,9 @@
 
 // waterlevel = min(maxleftBarHeight, maxRightbarLevel) so we need 2 arrays MaxLeft and Maxright
 
-// trapped water     be [ 4-4 4-2 4-0 6-6 6-3 6-2 6-5 ]
+// trapped water     be [ 4-4 4-2 4-0 6-6 5-3 5-2 5-5 ]
 // logic trappingWater = (waterLevel - Selfbarlevel)*width
-
-
+// tc = O(n)
 public class TrappingRainwater {
     public static void trappingRainwater(int height[]){
         int n = height.length;

@@ -26,7 +26,7 @@ public class Kadanes {
     }
 
     public static void main(String[] args) {
-        int arr[] = { -2, -3, -1, -2,4, -3 };
+        int arr[] = { -2, 4};
         kadanes(arr, arr.length);
     }
 }
