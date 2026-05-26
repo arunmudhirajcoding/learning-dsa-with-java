@@ -1,31 +1,10 @@
 package BST;
-public class basic {
+public class basic extends BuildTree {
     //searching in BST is like binary search. only one substree need to search.
     //tc = O(H) where H = logN(in bestcase) or H = N(in worst case)
-    static class Node{
-        int data;
-        Node left;
-        Node right;
-        Node(int data){
-            this.data=data;
-        }
-    }
+    
 
-    public static Node insert(Node root, int val){
-        if (root == null) {
-            root = new Node(val);
-            return root;
-        }
-
-        if (root.data > val) {
-            root.left = insert(root.left, val);
-        } else {
-
-            root.right = insert(root.right, val);
-        }
-        return root;
-    }
-
+    
     public static boolean search(Node root, int key){
         if (root == null) {
             return false;
@@ -42,31 +21,41 @@ public class basic {
     }
 
     // delete
-    public static void delete(Node root, int key){
-        if (root == null) {
-            return;
+    public static Node delete(Node root, int val){
+        if (root.data < val) {
+            root.right = delete(root.right, val);
+        } else if(root.data > val){
+            root.left = delete(root.left, val);
+        }else{ // data == val
+            //  case 1 - leaf node
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+            // case 2 - single child 
+            if (root.left == null) {
+                return root.right;
+            }else if (root.right == null) {
+                return root.left;
+            }
+
+            // case 3 - both children
+            //  find left most node of right subtree
+            Node IS = findInorderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = delete(root.right, IS.data);
         }
 
-        if (key == root.data) {
-            // arrangement
-            root = null;
-
-            return;
-        }else if (key > root.data) {
-            delete(root.right, key);
-        }else{
-            delete(root.left, key);
-        }
+        return root;
     }
 
-    public static void inOrder(Node root){
-        if(root == null){
-            return;
+    // helper function for delete
+    public static Node findInorderSuccessor(Node root){
+        while (root.left != null) {
+            root = root.left;
         }
-        inOrder(root.left);
-        System.out.println(root.data+" ");
-        inOrder(root.right);
+        return root;
     }
+
 
     public static void main(String[] args) {
         int values[] = {1, 2, 5, 7, 4,3};
@@ -79,6 +68,9 @@ public class basic {
         inOrder(root);
         System.out.println();
         System.out.println(search(root, 7));
+        root = delete(root, 1);
+        System.out.println();
+        inOrder(root);
         
     }
     
